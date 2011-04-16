@@ -1,25 +1,29 @@
-h2. Description
+h1. zodiac
 
 @zodiac@ is a simple gem for getting a zodiac sign from a given date of birth. It extends @Time@, @Date@ and @DateTime@ objects with a @zodiac_sign@ method.
 
 h2. Installation
 
-  gem install zodiac
+<pre>gem install zodiac</pre>
 
 h2. Usage
 
-  require 'zodiac'
-  Time.now.zodiac_sign                  # => "Aries"
-  require 'date'
-  Date.new(2011, 1, 1).zodiac_sign      # => "Capricorn"
-  DateTime.new(2011, 4, 30).zodiac_sign # => "Taurus"
+<pre>
+require 'zodiac'
+Time.now.zodiac_sign                  # => "Aries"
+require 'date'
+Date.new(2011, 1, 1).zodiac_sign      # => "Capricorn"
+DateTime.new(2011, 4, 30).zodiac_sign # => "Taurus"
+</pre>
 
 @#zodiac_sign@ returns values using I18n with "zodiac.#{sign}" path, so if you want your own translations, you can put them in your locale with keys like @zodiac.aries@, @zodiac.taurus@ etc. See examples "here":http://github.com/7even/zodiac/blob/master/lib/locales/en.yml
 
 h2. Included locales
 
-  :en
-  :ru
+<pre>
+:en
+:ru
+</pre>
 
 h2. Roadmap
 
@@ -27,11 +31,13 @@ h2. Roadmap
 
 2. ActiveRecord macro:
 
-  class Person < ActiveRecord::Base
-    zodiac_reader :dob                  # dob is a DateTime attribute containing person's date of birth
-  end
-  Person.first.zodiac_sign              # => "scorpio"
-  Person.find_by_zodiac_sign("gemini")  # => AR::Relation
+<pre>
+class Person < ActiveRecord::Base
+  zodiac_reader :dob                  # dob is a DateTime attribute containing person's date of birth
+end
+Person.first.zodiac_sign              # => "scorpio"
+Person.find_by_zodiac_sign("gemini")  # => AR::Relation
+</pre>
 
 h2. Contributing
 
