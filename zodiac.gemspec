@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{Adds methods for getting a zodiac sign from any Date/Time object}
   
   s.add_dependency 'funtimes'
+  s.add_development_dependency 'rspec'
   
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
