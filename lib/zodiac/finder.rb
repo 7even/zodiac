@@ -1,4 +1,3 @@
-require 'funtimes'
 module Zodiac
   module Finder
     YEAR = 2011
@@ -30,7 +29,7 @@ module Zodiac
     def self.sign_for(date)
       RANGES.each do |range, sign|
         if range.days.include? date_for(date[:month], date[:day])
-          return sign
+          return I18n.t!("zodiac.#{sign}")
         end
       end
       raise ArgumentError

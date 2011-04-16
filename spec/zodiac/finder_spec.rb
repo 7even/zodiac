@@ -7,7 +7,7 @@ module Zodiac
     end
     
     it "returns correct zodiac sign" do
-      Finder.sign_for(:month => 9, :day => 27).should == :libra
+      Finder.sign_for(:month => 9, :day => 27).should == I18n.t('zodiac.libra')
     end
   end
 end
