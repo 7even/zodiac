@@ -20,11 +20,9 @@ DateTime.new(2011, 4, 30).zodiac_sign # => "Taurus"
 
 h2. Included locales
 
-<pre>
 en
 ru
 pt-BR (thanks "jeffrydegrande":https://github.com/jeffrydegrande)
-</pre>
 
 h2. Changelog
 
