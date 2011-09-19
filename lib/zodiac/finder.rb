@@ -32,6 +32,7 @@ module Zodiac
           return I18n.t!("zodiac.#{sign}")
         end
       end
+      
       raise ArgumentError
     end
   end

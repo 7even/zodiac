@@ -4,3 +4,4 @@ I18n.config.load_path += Dir.glob(File.dirname(File.expand_path(__FILE__)) + '/l
 
 require 'zodiac/finder'
 require 'zodiac/date'
+require 'zodiac/activerecord'
