@@ -1,0 +1,9 @@
+class <%= migration_classname %> < ActiveRecord::Migration
+  def self.up
+    add_column :<%= table_name %>, :<%= sign_attribute.underscore %>, :integer
+  end
+  
+  def self.down
+    remove_column :<%= table_name %>, :<%= sign_attribute.underscore %>
+  end
+end

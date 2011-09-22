@@ -1,0 +1,5 @@
+class <%= migration_classname %> < ActiveRecord::Migration
+  def change
+    add_column :<%= table_name %>, :<%= sign_attribute.underscore %>, :integer
+  end
+end

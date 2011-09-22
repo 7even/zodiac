@@ -1,0 +1,1 @@
+Generates a migration which adds a zodiac_sign_id (unless overridden) field to the specified model table so that you can search objects by a zodiac sign.
