@@ -12,4 +12,10 @@ describe Zodiac::Finder do
       subject.sign_for(:month => 9, :day => 27).should == I18n.t('zodiac.libra')
     end
   end
+  
+  describe ".sign_id_for" do
+    it "returns correct sign id" do
+      subject.sign_id_for(:month => 9, :day => 27).should == 7
+    end
+  end
 end
