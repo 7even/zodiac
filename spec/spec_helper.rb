@@ -5,3 +5,4 @@ ActiveRecord::Base.establish_connection(:adapter => 'sqlite3', :database => 'spe
 require 'zodiac'
 
 require File.expand_path('../support/person.rb', __FILE__)
+require File.expand_path('../support/lite_person.rb', __FILE__)
