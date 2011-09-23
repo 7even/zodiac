@@ -4,6 +4,11 @@ module Zodiac
       raise "#{self} should respond_to #month and #day" unless respond_to?(:month) && respond_to?(:day)
       Finder.sign_for(:month => self.month, :day => self.day)
     end
+    
+    def zodiac_sign_id
+      raise "#{self} should respond_to #month and #day" unless respond_to?(:month) && respond_to?(:day)
+      Finder.sign_id_for(:month => self.month, :day => self.day)
+    end
   end
 end
 

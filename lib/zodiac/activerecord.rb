@@ -14,6 +14,13 @@ module Zodiac
       
       def zodiac_reader(dob_attribute)
         @date_for_zodiac = dob_attribute
+        
+        # if the migration was applied, we should update the sign attribute before each save
+        if self.column_names.include?('zodiac_sign_id')
+          self.before_save do |object|
+            object.zodiac_sign_id = object.send(dob_attribute).try(:zodiac_sign_id)
+          end
+        end
       end
     end
     
