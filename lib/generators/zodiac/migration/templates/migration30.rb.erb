@@ -1,9 +1,17 @@
+<%# migration for ActiveRecord 3.0 -%>
 class <%= migration_classname %> < ActiveRecord::Migration
   def self.up
     add_column :<%= table_name %>, :<%= sign_attribute.underscore %>, :integer
+    add_index  :<%= table_name %>, :<%= sign_attribute.underscore %>
+    
+    <%= model_classname %>.all.each do |<%= model_name.underscore.singularize %>|
+      <%= model_name.underscore.singularize %>.send(:update_sign_id)
+      <%= model_name.underscore.singularize %>.save
+    end
   end
   
   def self.down
+    remove_index  :<%= table_name %>, :<%= sign_attribute.underscore %>
     remove_column :<%= table_name %>, :<%= sign_attribute.underscore %>
   end
 end

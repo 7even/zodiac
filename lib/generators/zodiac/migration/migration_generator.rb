@@ -28,6 +28,10 @@ module Zodiac
       "Add#{sign_attribute.camelcase}To#{model_name.gsub('::', '').camelcase.pluralize}"
     end
     
+    def model_classname
+      model_name.camelcase.singularize
+    end
+    
     def table_name
       model_name.underscore.gsub('/', '_').pluralize
     end
