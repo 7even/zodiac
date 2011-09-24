@@ -68,6 +68,28 @@ describe Zodiac::ActiveRecord do
       end
     end
     
+    describe "predicate methods (like #libra?)" do
+      context "on a migrated model" do
+        it "return true if the sign is correct" do
+          @person.should be_pisces
+        end
+        
+        it "return false if the sign is incorrect" do
+          @person.should_not be_libra
+        end
+      end
+      
+      context "on a non-migrated model" do
+        it "return true if the sign is correct" do
+          @lite_person.should be_pisces
+        end
+        
+        it "return false if the sign is incorrect" do
+          @lite_person.should_not be_libra
+        end
+      end
+    end
+    
     describe "before_save callback" do
       before(:each) do
         @new_dob = Time.gm(1955, 10, 28)

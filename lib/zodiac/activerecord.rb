@@ -3,9 +3,15 @@ module Zodiac
     module InstanceMethods
       def zodiac_sign
         raise 'You should call #zodiac_reader in your class for this to work' unless self.class.respond_to?(:date_for_zodiac)
-        
-        date_method = self.class.date_for_zodiac
-        self.send(date_method).try(:zodiac_sign)
+        self.send(self.class.date_for_zodiac).try(:zodiac_sign)
+      end
+      
+      Zodiac.each_sign do |symbol, integer|
+        method_name = "#{symbol}?"
+        define_method(method_name) do
+          raise 'You should call #zodiac_reader in your class for this to work' unless self.class.respond_to?(:date_for_zodiac)
+          self.send(self.class.date_for_zodiac).try(method_name)
+        end
       end
     end
     
@@ -35,7 +41,7 @@ module Zodiac
           }
           
           # Person.gemini == Person.by_zodiac(3)
-          Zodiac::Finder::SIGN_IDS.each do |symbol, integer|
+          Zodiac.each_sign do |symbol, integer|
             scope symbol, by_zodiac(integer)
           end
         end
