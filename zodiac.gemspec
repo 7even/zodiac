@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ['7@7vn.ru']
   s.homepage    = 'https://github.com/7even/zodiac'
   s.summary     = %q{Zodiac sign calculator for any date}
-  s.description = %q{Adds methods for getting a zodiac sign from any Date/Time object containing a date of birth}
+  s.description = %q{Adds methods for getting a zodiac sign from any Date/Time object containing a date of birth, and can also extend ActiveRecord::Base adding some handy instance and class methods (for searching by a given zodiac sign and more).}
   
   s.add_dependency 'funtimes'
   s.add_dependency 'i18n'
