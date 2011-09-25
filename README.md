@@ -43,7 +43,7 @@ The first thing you need to do is to add `gem 'zodiac'` to your `Gemfile` as des
 To add zodiac methods to your model you just call a `zodiac_reader` macro in your model passing it the name of the attribute containing the date of birth:
 
 ``` ruby
-class Person
+class Person < ActiveRecord::Base
   zodiac_reader :dob
 end
 ```
@@ -82,7 +82,7 @@ To keep the consistency of a zodiac sign with the date of birth, `zodiac_reader`
 If you don't like the name of the field containing zodiac sign (by default it's `zodiac_sign_id`), you can customize it, passing the wanted name as an option to `zodiac_reader` in your model and then as the second parameter to the generator:
 
 ``` ruby
-class Person
+class Person < ActiveRecord::Base
   zodiac_reader :dob, :sign_id_attribute => :custom_sign_id
 end
 ```
