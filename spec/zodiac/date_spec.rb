@@ -5,7 +5,12 @@ module Zodiac
     %w(Time Date DateTime).each do |date_class|
       context "included into #{date_class}" do
         before(:each) do
-          @date = Object.const_get(date_class).new(Finder::YEAR, 9, 27)
+          klass = Object.const_get(date_class)
+          if klass == Time
+            @date = Time.gm(Finder::YEAR, 9, 27)
+          else
+            @date = klass.new(Finder::YEAR, 9, 27)
+          end
         end
         
         it 'provides #zodiac_sign' do
