@@ -10,7 +10,7 @@ gem install zodiac
 Or, if you want to extend your rails app, add the following to the `Gemfile`:
 
 ``` ruby
-gem 'zodiac', '>= 0.2'
+gem 'zodiac'
 ```
 
 and run `bundle install`.
