@@ -93,15 +93,17 @@ rails generate zodiac:migration Person custom_sign_id
 
 ## Included locales
 
-* en
-* ru
-* pt-BR (thanks [jeffrydegrande](https://github.com/jeffrydegrande))
+* en (English)
+* ru (Russian)
+* pt-BR (Brazilian Portuguese) - thanks [jeffrydegrande](https://github.com/jeffrydegrande)
+* ja (Japanese) - thanks [hamakn](https://github.com/hamakn)
 
 ## Changelog
 
 * 0.1 Initial version with Time/Date/DateTime extension and [:ru, :en] locales
-* 0.1.1 Added pt-BR locale (thanks [jeffrydegrande](https://github.com/jeffrydegrande))
+* 0.1.1 Added Brazilian Portuguese locale (thanks [jeffrydegrande](https://github.com/jeffrydegrande))
 * 0.2 Added ActiveRecord support (scopes, predicate methods and delegating `#zodiac_sign` to date-of-birth attribute)
+* 0.2.1 Added Japanese locale (thanks [hamakn](https://github.com/hamakn))
 
 ## Roadmap
 
