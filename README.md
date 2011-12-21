@@ -1,4 +1,5 @@
-# zodiac
+# zodiac [![Build Status](https://secure.travis-ci.org/7even/zodiac.png)](http://travis-ci.org/7even/zodiac)
+
 `zodiac` is a simple gem for getting a zodiac sign from a given date of birth. It extends `Time`, `Date` and `DateTime` objects with a `#zodiac_sign` method and can also extend `ActiveRecord::Base` with several instance (delegated to some date attribute of the model object) and class methods (allowing you to search for objects with a certain zodiac sign)
 
 ## Installation
