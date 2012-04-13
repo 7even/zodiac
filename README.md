@@ -99,6 +99,7 @@ rails generate zodiac:migration Person custom_sign_id
 * pt-BR (Brazilian Portuguese) - thanks [jeffrydegrande](https://github.com/jeffrydegrande)
 * ja (Japanese) - thanks [hamakn](https://github.com/hamakn)
 * it (Italian) - thanks [lucapette](https://github.com/lucapette)
+* es (Spanish) - thanks [jazminschroeder](https://github.com/jazminschroeder)
 
 ## Changelog
 
@@ -107,10 +108,11 @@ rails generate zodiac:migration Person custom_sign_id
 * 0.2 Added ActiveRecord support (scopes, predicate methods and delegating `#zodiac_sign` to date-of-birth attribute)
 * 0.2.1 Added Japanese locale (thanks [hamakn](https://github.com/hamakn))
 * 0.2.2 Added Italian locale (thanks [lucapette](https://github.com/lucapette))
+* 0.2.3 Added Spanish locale (thanks [jazminschroeder](https://github.com/jazminschroeder))
 
 ## Roadmap
 
-1. Rdoc coverage of everything
+1. Rdoc/YARD coverage of everything
 
 2. Other ORMs support (DataMapper, Sequel, Mongoid)
 
