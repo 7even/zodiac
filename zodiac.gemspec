@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Vsevolod Romashov']
   s.email       = ['7@7vn.ru']
-  s.homepage    = 'https://github.com/7even/zodiac'
+  s.homepage    = 'http://7even.github.com/zodiac'
   s.summary     = %q{Zodiac sign calculator for any date}
   s.description = %q{Adds methods for getting a zodiac sign from any Date/Time object containing a date of birth, and can also extend ActiveRecord::Base adding some handy instance and class methods (for searching by a given zodiac sign and more).}
   
