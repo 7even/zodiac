@@ -109,6 +109,7 @@ rails generate zodiac:migration Person custom_sign_id
 * 0.2.1 Added Japanese locale (thanks [hamakn](https://github.com/hamakn))
 * 0.2.2 Added Italian locale (thanks [lucapette](https://github.com/lucapette))
 * 0.2.3 Added Spanish locale (thanks [jazminschroeder](https://github.com/jazminschroeder))
+* 0.2.4 Correct leap-year dates handling (thanks [BastienDuplessier](https://github.com/BastienDuplessier))
 
 ## Roadmap
 
