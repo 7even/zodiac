@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Zodiac by 7even</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/7even/zodiac">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Zodiac</h1>
+            <h2>Zodiac sign calculator</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/7even/zodiac/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/7even/zodiac/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h2>Overview</h2>
+
+<p><code>zodiac</code> is a ruby library for finding one's zodiac sign by a date of birth.</p>
+
+<h2>Installation</h2>
+
+<div class="highlight">
+<pre><span class="nv">$ </span>gem install zodiac
+</pre>
+</div>
+
+
+<p>or</p>
+
+<div class="highlight">
+<pre><span class="c1"># Gemfile</span>
+<span class="n">gem</span> <span class="s1">'zodiac'</span>
+</pre>
+</div>
+
+
+<h2>Usage</h2>
+
+<h3>Time/Date/DateTime usage</h3>
+
+<div class="highlight">
+<pre><span class="nb">require</span> <span class="s1">'zodiac'</span>
+<span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">zodiac_sign</span>                  <span class="c1"># =&gt; "Aries"</span>
+<span class="nb">require</span> <span class="s1">'date'</span>
+<span class="no">Date</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">zodiac_sign</span>      <span class="c1"># =&gt; "Capricorn"</span>
+<span class="no">DateTime</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">zodiac_sign</span> <span class="c1"># =&gt; "Taurus"</span>
+</pre>
+</div>
+
+
+<p>Zodiac sign names are retrieved from <code>I18n</code> and can be added to standard locales if your language isn't yet supported by the gem.</p>
+
+<div class="highlight">
+<pre><span class="no">Date</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1989</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span><span class="o">.</span><span class="n">pisces?</span> <span class="c1"># =&gt; true</span>
+<span class="no">Time</span><span class="o">.</span><span class="n">gm</span><span class="p">(</span><span class="mi">1978</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">gemini?</span>  <span class="c1"># =&gt; false</span>
+</pre>
+</div>
+
+
+<h3>ActiveRecord usage</h3>
+
+<p>Suppose you have a date of birth in <code>dob</code> column.</p>
+
+<div class="highlight">
+<pre><span class="c1"># app/models/person.rb</span>
+<span class="k">class</span> <span class="nc">Person</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">zodiac_reader</span> <span class="ss">:dob</span>
+<span class="k">end</span>
+</pre>
+</div>
+
+
+<p>Now your <code>Person</code> instances have the same zodiac functionality as <code>Time</code> and <code>Date</code>:</p>
+
+<div class="highlight">
+<pre><span class="vi">@person</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">first</span>
+<span class="vi">@person</span><span class="o">.</span><span class="n">zodiac_sign</span>    <span class="c1"># =&gt; "Taurus"</span>
+<span class="vi">@person</span><span class="o">.</span><span class="n">libra?</span>         <span class="c1"># =&gt; false</span>
+<span class="vi">@person</span><span class="o">.</span><span class="n">taurus?</span>        <span class="c1"># =&gt; true</span>
+</pre>
+</div>
+
+
+<h3>ActiveRecord searching by zodiac sign</h3>
+
+<div class="highlight">
+<pre><span class="nv">$ </span>rails generate zodiac:migration Person
+<span class="nv">$ </span>rake db:migrate
+</pre>
+</div>
+
+
+<div class="highlight">
+<pre><span class="no">Person</span><span class="o">.</span><span class="n">with_zodiac_sign</span><span class="p">(</span><span class="s1">'libra'</span><span class="p">)</span> <span class="c1"># returns all libras</span>
+<span class="no">Person</span><span class="o">.</span><span class="n">gemini</span>                    <span class="c1"># all the geminis</span>
+</pre>
+</div>
+
+
+<h2>Included locales</h2>
+
+<ul>
+<li>en (English)</li>
+<li>ru (Russian)</li>
+<li>pt-BR (Brazilian Portuguese)</li>
+<li>ja (Japanese)</li>
+<li>it (Italian)</li>
+<li>es (Spanish)</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/7even">7even</a> can be found on <a href="https://github.com/7even/zodiac">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-31422612-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
