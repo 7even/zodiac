@@ -5,6 +5,10 @@ describe Zodiac::Finder do
     it "generates correct dates" do
       subject.date_for(9, 27).should == DateTime.new(subject::YEAR, 9, 27)
     end
+
+    it "generates correct dates even in leap year" do
+      subject.date_for(2, 29).should == DateTime.new(2012, 2, 29)
+    end
   end
   
   describe ".sign_for" do

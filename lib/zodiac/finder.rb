@@ -1,6 +1,6 @@
 module Zodiac
   module Finder
-    YEAR = 2011
+    YEAR = 2012
     
     class << self
       def date_for(month, day)
