@@ -4,7 +4,7 @@ Bundler::GemHelper.install_tasks
 
 desc 'Fires up the console with preloaded zodiac (and active_record)'
 task :console do
-  sh 'pry -I ./lib/ -rubygems -r active_record -r ./lib/zodiac.rb'
+  sh 'pry -I ./lib -r active_record -r ./lib/zodiac'
 end
 
 RSpec::Core::RakeTask.new do |t|
