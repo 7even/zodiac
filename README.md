@@ -119,8 +119,6 @@ rails generate zodiac:migration Person custom_sign_id
 
 2. Other ORMs support (DataMapper, Sequel, Mongoid)
 
-3. ActiveRecord 4.0 support (extending AR::Model instead of AR::Base)
-
 ## Contributing
 
 Fork the repository, push your changes to a topic branch and send me a pull request.
