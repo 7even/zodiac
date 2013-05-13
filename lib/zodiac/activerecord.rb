@@ -13,6 +13,7 @@ module Zodiac
           self.send(self.class.date_for_zodiac).try(method_name)
         end
       end
+      
     private
       def update_sign_id
         sign_id_method  = "#{self.class.zodiac_sign_id_field}="
@@ -24,9 +25,9 @@ module Zodiac
     module ClassMethods
       attr_reader :date_for_zodiac, :zodiac_sign_id_field
       
-      def zodiac_reader(dob_attribute, options = {:sign_id_attribute => :zodiac_sign_id})
+      def zodiac_reader(dob_attribute, options = {})
         @date_for_zodiac = dob_attribute
-        @zodiac_sign_id_field = options[:sign_id_attribute]
+        @zodiac_sign_id_field = options[:sign_id_attribute] || :zodiac_sign_id
         
         # if the migration was applied, we should update the sign attribute before each save
         # and define some scopes
