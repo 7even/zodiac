@@ -22,4 +22,10 @@ describe Zodiac::Finder do
       subject.sign_id_for(:month => 9, :day => 27).should == 7
     end
   end
+
+  describe ".sign_symbol_for" do
+    it "returns correct sign symbol" do
+      subject.sign_symbol_for(:month => 9, :day => 27).should == :libra
+    end
+  end
 end
