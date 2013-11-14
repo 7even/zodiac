@@ -13,6 +13,7 @@ module Zodiac
           self.send(self.class.date_for_zodiac).try(method_name)
         end
       end
+      
     private
       def update_sign_id
         sign_id_method  = "#{self.class.zodiac_sign_id_field}="
@@ -24,7 +25,7 @@ module Zodiac
     module ClassMethods
       attr_reader :date_for_zodiac, :zodiac_sign_id_field
       
-      def zodiac_reader(dob_attribute, options = {:sign_id_attribute => :zodiac_sign_id})
+      def zodiac_reader(dob_attribute, options = { sign_id_attribute: :zodiac_sign_id })
         @date_for_zodiac = dob_attribute
         @zodiac_sign_id_field = options[:sign_id_attribute]
         
@@ -35,7 +36,7 @@ module Zodiac
             object.send(:update_sign_id)
           end
           
-          # Person.by_zodiac(7 || :libra) == Person.where(:zodiac_sign_id => 7)
+          # Person.by_zodiac(7 || :libra) == Person.where(zodiac_sign_id: 7)
           scope :by_zodiac, lambda { |sign|
             case sign
             when Symbol

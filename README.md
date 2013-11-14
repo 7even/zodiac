@@ -84,7 +84,7 @@ If you don't like the name of the field containing zodiac sign (by default it's 
 
 ``` ruby
 class Person < ActiveRecord::Base
-  zodiac_reader :dob, :sign_id_attribute => :custom_sign_id
+  zodiac_reader :dob, sign_id_attribute: :custom_sign_id
 end
 ```
 

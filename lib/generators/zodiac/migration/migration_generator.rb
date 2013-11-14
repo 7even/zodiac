@@ -1,12 +1,13 @@
 module Zodiac
   class MigrationGenerator < Rails::Generators::Base
     source_root File.expand_path('../templates', __FILE__)
-    argument :model_name, :type => :string
-    argument :sign_attribute, :type => :string, :default => 'zodiac_sign_id'
+    argument :model_name, type: :string
+    argument :sign_attribute, type: :string, default: 'zodiac_sign_id'
     
     def copy_files
       template template_name, "db/migrate/#{migration_filename}.rb"
     end
+    
   private
     def template_name
       if Rails.version < '3.1'
