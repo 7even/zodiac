@@ -50,7 +50,7 @@ module Zodiac
           
           # Person.gemini == Person.by_zodiac(3)
           Zodiac.each_sign do |symbol, integer|
-            scope symbol, by_zodiac(integer)
+            scope symbol, -> { by_zodiac(integer) }
           end
         end
       end
