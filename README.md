@@ -112,6 +112,7 @@ rails generate zodiac:migration Person custom_sign_id
 * 0.2.3 Added Spanish locale (thanks [jazminschroeder](https://github.com/jazminschroeder))
 * 0.2.4 Correct leap-year dates handling (thanks [BastienDuplessier](https://github.com/BastienDuplessier))
 * 0.2.5 Added German locale (thanks [contradictioned](https://github.com/contradictioned))
+* 0.2.6 Added rails 4.0 support (thanks [travisp](https://github.com/travisp))
 
 ## Roadmap
 
