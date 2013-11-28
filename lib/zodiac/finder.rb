@@ -51,7 +51,7 @@ module Zodiac
     def self.sign_id_for(date)
       SIGN_IDS[self.sign_symbol_for date]
     end
-
+    
     def self.sign_symbol_for(date)
       RANGES.each do |range, sign|
         if range.days.cover? date_for(date[:month], date[:day])
