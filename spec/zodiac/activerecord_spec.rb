@@ -4,9 +4,9 @@ describe Zodiac::ActiveRecord do
   describe "class methods" do
     context "standard model" do
       before(:each) do
-        @gemini1 = Person.create dob: Time.gm(1982, 5, 27)
-        @gemini2 = Person.create dob: Time.gm(1987, 5, 29)
-        @libra   = Person.create dob: Time.gm(1984, 9, 27)
+        @gemini1 = Person.create dob: Date.new(1982, 5, 27)
+        @gemini2 = Person.create dob: Date.new(1987, 5, 29)
+        @libra   = Person.create dob: Date.new(1984, 9, 27)
         @nobody  = Person.create dob: nil
       end
       
@@ -54,9 +54,9 @@ describe Zodiac::ActiveRecord do
     
     context "custom model" do
       before(:each) do
-        @gemini1 = CustomPerson.create dob: Time.gm(1982, 5, 27)
-        @gemini2 = CustomPerson.create dob: Time.gm(1987, 5, 29)
-        @libra   = CustomPerson.create dob: Time.gm(1984, 9, 27)
+        @gemini1 = CustomPerson.create dob: Date.new(1982, 5, 27)
+        @gemini2 = CustomPerson.create dob: Date.new(1987, 5, 29)
+        @libra   = CustomPerson.create dob: Date.new(1984, 9, 27)
         @nobody  = CustomPerson.create dob: nil
       end
       
@@ -88,7 +88,7 @@ describe Zodiac::ActiveRecord do
   
   describe "instance_methods" do
     before(:each) do
-      dob          = Time.gm(1955, 2, 24)
+      dob          = Date.new(1955, 2, 24)
       @person      = Person.create(name: 'Steve', dob: dob)
       @lite_person = LitePerson.create(name: 'Steve lite', dob: dob)
       @nobody      = Person.create(name: 'Nobody', dob: nil)
@@ -145,7 +145,7 @@ describe Zodiac::ActiveRecord do
     
     describe "before_save callback" do
       before(:each) do
-        @new_dob = Time.gm(1955, 10, 28)
+        @new_dob = Date.new(1955, 10, 28)
       end
       
       context "on a migrated model" do
