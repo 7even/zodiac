@@ -37,7 +37,7 @@ module Zodiac
           end
           
           # Person.by_zodiac(7 || :libra) == Person.where(zodiac_sign_id: 7)
-          scope :by_zodiac, -> (sign) do
+          scope :by_zodiac, ->(sign) do
             case sign
             when Symbol
               where(self.zodiac_sign_id_field => Zodiac::Finder::SIGN_IDS[sign])
