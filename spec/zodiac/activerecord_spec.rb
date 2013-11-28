@@ -4,10 +4,10 @@ describe Zodiac::ActiveRecord do
   describe "class methods" do
     context "standard model" do
       before(:each) do
-        @gemini1 = Person.create :dob => Time.gm(1982, 5, 27)
-        @gemini2 = Person.create :dob => Time.gm(1987, 5, 29)
-        @libra   = Person.create :dob => Time.gm(1984, 9, 27)
-        @nobody  = Person.create :dob => nil
+        @gemini1 = Person.create dob: Time.gm(1982, 5, 27)
+        @gemini2 = Person.create dob: Time.gm(1987, 5, 29)
+        @libra   = Person.create dob: Time.gm(1984, 9, 27)
+        @nobody  = Person.create dob: nil
       end
       
       describe ".zodiac_reader" do
@@ -54,10 +54,10 @@ describe Zodiac::ActiveRecord do
     
     context "custom model" do
       before(:each) do
-        @gemini1 = CustomPerson.create :dob => Time.gm(1982, 5, 27)
-        @gemini2 = CustomPerson.create :dob => Time.gm(1987, 5, 29)
-        @libra   = CustomPerson.create :dob => Time.gm(1984, 9, 27)
-        @nobody  = CustomPerson.create :dob => nil
+        @gemini1 = CustomPerson.create dob: Time.gm(1982, 5, 27)
+        @gemini2 = CustomPerson.create dob: Time.gm(1987, 5, 29)
+        @libra   = CustomPerson.create dob: Time.gm(1984, 9, 27)
+        @nobody  = CustomPerson.create dob: nil
       end
       
       describe ".zodiac_reader" do
@@ -89,9 +89,9 @@ describe Zodiac::ActiveRecord do
   describe "instance_methods" do
     before(:each) do
       dob          = Time.gm(1955, 2, 24)
-      @person      = Person.create(:name => 'Steve', :dob => dob)
-      @lite_person = LitePerson.create(:name => 'Steve lite', :dob => dob)
-      @nobody      = Person.create(:name => 'Nobody', :dob => nil)
+      @person      = Person.create(name: 'Steve', dob: dob)
+      @lite_person = LitePerson.create(name: 'Steve lite', dob: dob)
+      @nobody      = Person.create(name: 'Nobody', dob: nil)
     end
     
     describe "#zodiac_sign" do

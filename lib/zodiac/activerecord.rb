@@ -37,7 +37,7 @@ module Zodiac
           end
           
           # Person.by_zodiac(7 || :libra) == Person.where(zodiac_sign_id: 7)
-          scope :by_zodiac, lambda { |sign|
+          scope :by_zodiac, -> (sign) do
             case sign
             when Symbol
               where(self.zodiac_sign_id_field => Zodiac::Finder::SIGN_IDS[sign])
@@ -46,7 +46,7 @@ module Zodiac
             else
               raise ArgumentError, "Invalid attribute type #{sign.class} for #{self}.by_zodiac"
             end
-          }
+          end
           
           # Person.gemini == Person.by_zodiac(3)
           Zodiac.each_sign do |symbol, integer|

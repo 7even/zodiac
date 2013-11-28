@@ -27,5 +27,5 @@ module Zodiac
 end
 
 [Time, Date, DateTime].each do |date_class|
-  date_class.send(:include, Zodiac::Date) 
+  date_class.send(:include, Zodiac::Date)
 end

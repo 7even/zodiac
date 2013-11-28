@@ -30,36 +30,38 @@ module Zodiac
     }
     
     SIGN_IDS = {
-      :aries        => 1,
-      :taurus       => 2,
-      :gemini       => 3,
-      :cancer       => 4,
-      :leo          => 5,
-      :virgo        => 6,
-      :libra        => 7,
-      :scorpio      => 8,
-      :sagittarius  => 9,
-      :capricorn    => 10,
-      :aquarius     => 11,
-      :pisces       => 12
+      aries:       1,
+      taurus:      2,
+      gemini:      3,
+      cancer:      4,
+      leo:         5,
+      virgo:       6,
+      libra:       7,
+      scorpio:     8,
+      sagittarius: 9,
+      capricorn:   10,
+      aquarius:    11,
+      pisces:      12
     }
     
-    def self.sign_for(date)
-      I18n.t!("zodiac.#{self.sign_symbol_for date}")
-    end
-    
-    def self.sign_id_for(date)
-      SIGN_IDS[self.sign_symbol_for date]
-    end
-    
-    def self.sign_symbol_for(date)
-      RANGES.each do |range, sign|
-        if range.days.cover? date_for(date[:month], date[:day])
-          return sign
-        end
+    class << self
+      def sign_for(date)
+        I18n.t!("zodiac.#{self.sign_symbol_for date}")
       end
       
-      raise ArgumentError
+      def sign_id_for(date)
+        SIGN_IDS[self.sign_symbol_for date]
+      end
+      
+      def sign_symbol_for(date)
+        RANGES.each do |range, sign|
+          if range.days.cover? date_for(date[:month], date[:day])
+            return sign
+          end
+        end
+        
+        raise ArgumentError
+      end
     end
   end
 end
