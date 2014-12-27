@@ -101,18 +101,22 @@ rails generate zodiac:migration Person custom_sign_id
 * it (Italian) - thanks [lucapette](https://github.com/lucapette)
 * es (Spanish) - thanks [jazminschroeder](https://github.com/jazminschroeder)
 * de (German) - thanks [contradictioned](https://github.com/contradictioned)
+* zh-CN (Chinese) - thanks [lufeihaidao](https://github.com/lufeihaidao)
+* fr (French) - thanks [Belibaste](https://github.com/Belibaste)
+* lv (Latvian) - thanks [ExClouds](https://github.com/ExClouds)
 
 ## Changelog
 
-* 0.1 Initial version with Time/Date/DateTime extension and [:ru, :en] locales
-* 0.1.1 Added Brazilian Portuguese locale (thanks [jeffrydegrande](https://github.com/jeffrydegrande))
-* 0.2 Added ActiveRecord support (scopes, predicate methods and delegating `#zodiac_sign` to date-of-birth attribute)
-* 0.2.1 Added Japanese locale (thanks [hamakn](https://github.com/hamakn))
-* 0.2.2 Added Italian locale (thanks [lucapette](https://github.com/lucapette))
-* 0.2.3 Added Spanish locale (thanks [jazminschroeder](https://github.com/jazminschroeder))
-* 0.2.4 Correct leap-year dates handling (thanks [BastienDuplessier](https://github.com/BastienDuplessier))
-* 0.2.5 Added German locale (thanks [contradictioned](https://github.com/contradictioned))
-* 0.2.6 Added rails 4.0 support (thanks [travisp](https://github.com/travisp))
+* 0.1 Initial version with Time/Date/DateTime extension and [:ru, :en] locales.
+* 0.1.1 Added Brazilian Portuguese locale (thanks [jeffrydegrande](https://github.com/jeffrydegrande)).
+* 0.2 Added ActiveRecord support (scopes, predicate methods and delegating `#zodiac_sign` to date-of-birth attribute).
+* 0.2.1 Added Japanese locale (thanks [hamakn](https://github.com/hamakn)).
+* 0.2.2 Added Italian locale (thanks [lucapette](https://github.com/lucapette)).
+* 0.2.3 Added Spanish locale (thanks [jazminschroeder](https://github.com/jazminschroeder)).
+* 0.2.4 Correct leap-year dates handling (thanks [BastienDuplessier](https://github.com/BastienDuplessier)).
+* 0.2.5 Added German locale (thanks [contradictioned](https://github.com/contradictioned)).
+* 0.2.6 Added rails 4.0 support (thanks [travisp](https://github.com/travisp)).
+* 0.2.7 Added Chinese, French & Latvian locales, added `Zodiac::Date#zodiac_sign_symbol`.
 
 ## Roadmap
 
