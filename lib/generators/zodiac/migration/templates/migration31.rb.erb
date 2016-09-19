@@ -4,7 +4,7 @@ class <%= migration_classname %> < ActiveRecord::Migration
     add_column :<%= table_name %>, :<%= sign_attribute.underscore %>, :integer
     add_index  :<%= table_name %>, :<%= sign_attribute.underscore %>
     
-    <%= model_classname %>.all.each do |<%= model_name.underscore.singularize %>|
+    <%= model_classname %>.find_each do |<%= model_name.underscore.singularize %>|
       <%= model_name.underscore.singularize %>.send(:update_sign_id)
       <%= model_name.underscore.singularize %>.save
     end
