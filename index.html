@@ -3,11 +3,11 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
 
     <script type="text/javascript" src="javascripts/modernizr.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -46,67 +46,66 @@
 
 
       <section id="main_content">
-        <h2>Overview</h2>
+        <h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
 
 <p><code>zodiac</code> is a ruby library for finding one's zodiac sign by a date of birth.</p>
 
-<h2>Installation</h2>
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<div class="highlight"><pre><span class="nv">$ </span>gem install zodiac
-</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ gem install zodiac</pre></div>
 
 <p>or</p>
 
-<div class="highlight"><pre><span class="c1"># Gemfile</span>
-<span class="n">gem</span> <span class="s1">'zodiac'</span>
-</pre></div>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c"># Gemfile</span>
+<span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>zodiac<span class="pl-pds">'</span></span></pre></div>
 
-<h2>Usage</h2>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
-<h3>Time/Date/DateTime usage</h3>
+<h3>
+<a id="timedatedatetime-usage" class="anchor" href="#timedatedatetime-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Time/Date/DateTime usage</h3>
 
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'zodiac'</span>
-<span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">zodiac_sign</span>                  <span class="c1"># =&gt; "Aries"</span>
-<span class="nb">require</span> <span class="s1">'date'</span>
-<span class="no">Date</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">zodiac_sign</span>      <span class="c1"># =&gt; "Capricorn"</span>
-<span class="no">DateTime</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">zodiac_sign</span> <span class="c1"># =&gt; "Taurus"</span>
-</pre></div>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>zodiac<span class="pl-pds">'</span></span>
+<span class="pl-c1">Time</span>.now.zodiac_sign                  <span class="pl-c"># =&gt; "Aries"</span>
+<span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>date<span class="pl-pds">'</span></span>
+<span class="pl-c1">Date</span>.<span class="pl-k">new</span>(<span class="pl-c1">2011</span>, <span class="pl-c1">1</span>, <span class="pl-c1">1</span>).zodiac_sign      <span class="pl-c"># =&gt; "Capricorn"</span>
+<span class="pl-c1">DateTime</span>.<span class="pl-k">new</span>(<span class="pl-c1">2011</span>, <span class="pl-c1">4</span>, <span class="pl-c1">30</span>).zodiac_sign <span class="pl-c"># =&gt; "Taurus"</span></pre></div>
 
 <p>Zodiac sign names are retrieved from <code>I18n</code> and can be added to standard locales if your language isn't yet supported by the gem.</p>
 
-<div class="highlight"><pre><span class="no">Date</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1989</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span><span class="o">.</span><span class="n">pisces?</span> <span class="c1"># =&gt; true</span>
-<span class="no">Time</span><span class="o">.</span><span class="n">gm</span><span class="p">(</span><span class="mi">1978</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">gemini?</span>  <span class="c1"># =&gt; false</span>
-</pre></div>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c1">Date</span>.<span class="pl-k">new</span>(<span class="pl-c1">1989</span>, <span class="pl-c1">2</span>, <span class="pl-c1">26</span>).pisces? <span class="pl-c"># =&gt; true</span>
+<span class="pl-c1">Time</span>.gm(<span class="pl-c1">1978</span>, <span class="pl-c1">7</span>, <span class="pl-c1">12</span>).gemini?  <span class="pl-c"># =&gt; false</span></pre></div>
 
-<h3>ActiveRecord usage</h3>
+<h3>
+<a id="activerecord-usage" class="anchor" href="#activerecord-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ActiveRecord usage</h3>
 
 <p>Suppose you have a date of birth in <code>dob</code> column.</p>
 
-<div class="highlight"><pre><span class="c1"># app/models/person.rb</span>
-<span class="k">class</span> <span class="nc">Person</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="n">zodiac_reader</span> <span class="ss">:dob</span>
-<span class="k">end</span>
-</pre></div>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c"># app/models/person.rb</span>
+<span class="pl-k">class</span> <span class="pl-en">Person<span class="pl-e"> &lt; ActiveRecord::Base</span></span>
+  zodiac_reader <span class="pl-c1">:dob</span>
+<span class="pl-k">end</span></pre></div>
 
 <p>Now your <code>Person</code> instances have the same zodiac functionality as <code>Time</code> and <code>Date</code>:</p>
 
-<div class="highlight"><pre><span class="vi">@person</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">first</span>
-<span class="vi">@person</span><span class="o">.</span><span class="n">zodiac_sign</span>    <span class="c1"># =&gt; "Taurus"</span>
-<span class="vi">@person</span><span class="o">.</span><span class="n">libra?</span>         <span class="c1"># =&gt; false</span>
-<span class="vi">@person</span><span class="o">.</span><span class="n">taurus?</span>        <span class="c1"># =&gt; true</span>
-</pre></div>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-smi">@person</span> <span class="pl-k">=</span> <span class="pl-c1">Person</span>.first
+<span class="pl-smi">@person</span>.zodiac_sign    <span class="pl-c"># =&gt; "Taurus"</span>
+<span class="pl-smi">@person</span>.libra?         <span class="pl-c"># =&gt; false</span>
+<span class="pl-smi">@person</span>.taurus?        <span class="pl-c"># =&gt; true</span></pre></div>
 
-<h3>ActiveRecord searching by zodiac sign</h3>
+<h3>
+<a id="activerecord-searching-by-zodiac-sign" class="anchor" href="#activerecord-searching-by-zodiac-sign" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ActiveRecord searching by zodiac sign</h3>
 
-<div class="highlight"><pre><span class="nv">$ </span>rails generate zodiac:migration Person
-<span class="nv">$ </span>rake db:migrate
-</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ rails generate zodiac:migration Person
+$ rake db:migrate</pre></div>
 
-<div class="highlight"><pre><span class="no">Person</span><span class="o">.</span><span class="n">with_zodiac_sign</span><span class="p">(</span><span class="s1">'libra'</span><span class="p">)</span> <span class="c1"># returns all libras</span>
-<span class="no">Person</span><span class="o">.</span><span class="n">gemini</span>                    <span class="c1"># all the geminis</span>
-</pre></div>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c1">Person</span>.with_zodiac_sign(<span class="pl-s"><span class="pl-pds">'</span>libra<span class="pl-pds">'</span></span>) <span class="pl-c"># returns all libras</span>
+<span class="pl-c1">Person</span>.gemini                    <span class="pl-c"># all the geminis</span></pre></div>
 
-<h2>Included locales</h2>
+<h2>
+<a id="included-locales" class="anchor" href="#included-locales" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Included locales</h2>
 
 <ul>
 <li>en (English)</li>
@@ -116,6 +115,10 @@
 <li>it (Italian)</li>
 <li>es (Spanish)</li>
 <li>de (German)</li>
+<li>zh-CN (Chinese)</li>
+<li>fr (French)</li>
+<li>lv (Latvian)</li>
+<li>zh-TW (Traditional Chinese)</li>
 </ul>
       </section>
 
@@ -127,7 +130,7 @@
           <span class="left-tail"></span>
           <span class="right-tail"></span>
         </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
         <span class="octocat"></span>
       </footer>
 
