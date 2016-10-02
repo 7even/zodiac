@@ -104,6 +104,7 @@ rails generate zodiac:migration Person custom_sign_id
 * zh-CN (Chinese) - thanks [lufeihaidao](https://github.com/lufeihaidao)
 * fr (French) - thanks [Belibaste](https://github.com/Belibaste)
 * lv (Latvian) - thanks [ExClouds](https://github.com/ExClouds)
+* zh-TW (Traditional Chinese) - thanks [Dylan0203](https://github.com/Dylan0203)
 
 ## Changelog
 
@@ -117,6 +118,7 @@ rails generate zodiac:migration Person custom_sign_id
 * 0.2.5 Added German locale (thanks [contradictioned](https://github.com/contradictioned)).
 * 0.2.6 Added rails 4.0 support (thanks [travisp](https://github.com/travisp)).
 * 0.2.7 Added Chinese, French & Latvian locales, added `Zodiac::Date#zodiac_sign_symbol`.
+* 0.2.8 Added Traditional Chinese locale (thanks [Dylan0203](https://github.com/Dylan0203)).
 
 ## Roadmap
 
