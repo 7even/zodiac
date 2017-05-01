@@ -105,6 +105,7 @@ rails generate zodiac:migration Person custom_sign_id
 * fr (French) - thanks [Belibaste](https://github.com/Belibaste)
 * lv (Latvian) - thanks [ExClouds](https://github.com/ExClouds)
 * zh-TW (Traditional Chinese) - thanks [Dylan0203](https://github.com/Dylan0203)
+* uk (Ukrainian) - thanks [valdemarua](https://github.com/valdemarua)
 
 ## Changelog
 
@@ -119,12 +120,13 @@ rails generate zodiac:migration Person custom_sign_id
 * 0.2.6 Added rails 4.0 support (thanks [travisp](https://github.com/travisp)).
 * 0.2.7 Added Chinese, French & Latvian locales, added `Zodiac::Date#zodiac_sign_symbol`.
 * 0.2.8 Added Traditional Chinese locale (thanks [Dylan0203](https://github.com/Dylan0203)).
+* 0.2.9 Added Ukrainian locale (thanks [valdemarua](https://github.com/valdemarua)).
 
 ## Roadmap
 
 1. Rdoc/YARD coverage of everything
 
-2. Other ORMs support (DataMapper, Sequel, Mongoid)
+2. Other ORMs support (ROM, Sequel, Mongoid)
 
 ## Contributing
 
