@@ -1,0 +1,8 @@
+title: Zodiac
+description: Zodiac sign calculator
+google_analytics: UA-31422612-2
+show_downloads: true
+theme: jekyll-theme-merlot
+
+gems:
+  - jekyll-mentions
