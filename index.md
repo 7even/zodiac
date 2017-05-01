@@ -79,3 +79,4 @@ Person.gemini                    # all the geminis
 * fr (French)
 * lv (Latvian)
 * zh-TW (Traditional Chinese)
+* uk (Ukrainian)
