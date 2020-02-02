@@ -31,7 +31,7 @@ module Zodiac
         
         # if the migration was applied, we should update the sign attribute before each save
         # and define some scopes
-        if self.column_names.include?(@zodiac_sign_id_field.to_s)
+        if self.connection.table_exists?(self.table_name) && self.column_names.include?(@zodiac_sign_id_field.to_s)
           self.before_save do |object|
             object.send(:update_sign_id)
           end
