@@ -104,6 +104,7 @@ rails generate zodiac:migration Person custom_sign_id
 * zh-CN (Chinese) - thanks [lufeihaidao](https://github.com/lufeihaidao)
 * fr (French) - thanks [Belibaste](https://github.com/Belibaste)
 * lv (Latvian) - thanks [ExClouds](https://github.com/ExClouds)
+* lt (Lithuanian) - thanks [zilton7](https://github.com/zilton7)
 * zh-TW (Traditional Chinese) - thanks [Dylan0203](https://github.com/Dylan0203)
 * uk (Ukrainian) - thanks [valdemarua](https://github.com/valdemarua)
 * vi (Vietnamese) - thanks [kevincolemaninc](https://github.com/KevinColemanInc)
