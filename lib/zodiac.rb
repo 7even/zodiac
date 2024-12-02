@@ -12,3 +12,4 @@ end
 
 require 'zodiac/date'
 require 'zodiac/activerecord'
+require 'zodiac/mongoid'
